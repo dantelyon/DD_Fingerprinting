@@ -1,3 +1,3 @@
 
 
-//TEMP
+console.log(userAgent())
