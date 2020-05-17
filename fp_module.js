@@ -6,3 +6,4 @@ const userAgent = () => navigator.userAgent
 
 const storage = () => [!!window.localStorage, !!window.sessionStorage, !!window.indexedDB, localStorage.length, localStorage.key(0)]
 
+const fullscreen = () => document.fullscreenEnabled
