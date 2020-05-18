@@ -36,7 +36,14 @@ function timeOfVisit() {
 	return [date.getMonth(), date.getDate(), day, date.toLocaleTimeString()]
 }
 
-
+function networkInfo() { // limited availability
+	return {
+		rtt: navigator.connection.rtt,
+		downlink: navigator.connection.downlink,
+		effectiveType: navigator.connection.effectiveType,
+		saveData: navigator.connection.saveData,
+	}
+}
 
 
 
