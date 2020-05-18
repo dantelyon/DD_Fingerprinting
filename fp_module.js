@@ -25,9 +25,10 @@ function language() {
 	return navigator.languages.includes(lang) ? navigator.languages : lang
 }
 
-
-
-
+function cssMediaFeatures() {
+	const mediaFeatures = ["display-mode: browser", "min-color: 6", "any-hover: none", "any-pointer: none", "color-gamut: srgb", "monochrome: 0", "prefers-color-scheme: no-preference", "prefers-reduced-motion: no-preference"];
+	return mediaFeatures.map(feature => window.matchMedia("("+feature+")").matches ? 1 : 0).join("")
+} // color-gamut and min-color (color-index) are unsupported in Firefox.
 
 
 
