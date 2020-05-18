@@ -30,5 +30,13 @@ function cssMediaFeatures() {
 	return mediaFeatures.map(feature => window.matchMedia("("+feature+")").matches ? 1 : 0).join("")
 } // color-gamut and min-color (color-index) are unsupported in Firefox.
 
+function timeOfVisit() {
+	let date = new Date()
+	let day = new Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(date)
+	return [date.getMonth(), date.getDate(), day, date.toLocaleTimeString()]
+}
+
+
+
 
 
