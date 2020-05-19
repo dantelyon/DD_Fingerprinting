@@ -45,5 +45,14 @@ function networkInfo() { // limited availability
 	}
 }
 
+function aspectRatio() {
+	const gcd = (a,b) => !b ? a : gcd(b,a%b) // greatest common divisor
+	let divisor = gcd(screen.width, screen.height)
+	return screen.width / divisor + ":" + screen.height / divisor
+}
+
+
+
+
 
 
