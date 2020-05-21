@@ -20,6 +20,8 @@ const cookieEnabled = () => navigator.cookieEnabled
 
 const webdriver = () => navigator.webdriver == null ? "not available" : navigator.webdriver
 
+const colorDepth = () => window.screen.colorDepth
+
 function language() {
 	let lang = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage || "not available"
 	return navigator.languages.includes(lang) ? navigator.languages : lang
