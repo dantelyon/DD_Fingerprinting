@@ -63,6 +63,11 @@ function adblocking() {
 	return result
 }
 
+function screenResolution() { // why like this? because firefox.
+	let pixelRatio = window.devicePixelRatio || 1;
+	let normalized = [Math.round(screen.width * pixelRatio), Math.round(screen.height * pixelRatio)]
+	return normalized.join("x")
+}
 
 
 
