@@ -51,6 +51,16 @@ function aspectRatio() {
 	return screen.width / divisor + ":" + screen.height / divisor
 }
 
+function adblocking() {
+	let ads = document.createElement("div")
+	ads.innerHTML = '&nbsp;'
+	ads.className = 'adsbox'
+	document.body.appendChild(ads)
+	let result = document.getElementsByClassName('adsbox')[0].offsetHeight === 0;
+	document.body.removeChild(ads)
+	return result
+}
+
 
 
 
