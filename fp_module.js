@@ -22,6 +22,14 @@ const webdriver = () => navigator.webdriver == null ? "not available" : navigato
 
 const colorDepth = () => window.screen.colorDepth
 
+const browserWindowSize = () => `${window.outerWidth}x${window.outerHeight} and ${window.innerWidth}x${window.innerHeight}.` // full browser window size, and browser layout size. A bit unreliable because of browsers' zoom feature. 
+
+function screenResolution() {
+	let pixelRatio = window.devicePixelRatio || 1;
+	let normalized = [Math.round(screen.width * pixelRatio), Math.round(screen.height * pixelRatio)]
+	return normalized.join("x")
+}
+
 function language() {
 	let lang = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage || "not available"
 	return navigator.languages.includes(lang) ? navigator.languages : lang
@@ -63,11 +71,6 @@ function adblocking() {
 	return result
 }
 
-function screenResolution() { // why like this? because firefox.
-	let pixelRatio = window.devicePixelRatio || 1;
-	let normalized = [Math.round(screen.width * pixelRatio), Math.round(screen.height * pixelRatio)]
-	return normalized.join("x")
-}
 
 
 
