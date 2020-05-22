@@ -20,6 +20,8 @@ const cookieEnabled = () => navigator.cookieEnabled
 
 const webdriver = () => navigator.webdriver == null ? "not available" : navigator.webdriver
 
+const timezone = () => Intl.DateTimeFormat().resolvedOptions().timeZone || (new Date).getTimezoneOffset()
+
 const colorDepth = () => window.screen.colorDepth
 
 const browserWindowSize = () => `${window.outerWidth}x${window.outerHeight} and ${window.innerWidth}x${window.innerHeight}.` // full browser window size, and browser layout size. A bit unreliable because of browsers' zoom feature. 
