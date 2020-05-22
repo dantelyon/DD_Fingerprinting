@@ -22,6 +22,8 @@ const webdriver = () => navigator.webdriver == null ? "not available" : navigato
 
 const timezone = () => Intl.DateTimeFormat().resolvedOptions().timeZone || (new Date).getTimezoneOffset()
 
+const referrer = () => document.referrer // unreliable
+
 const colorDepth = () => window.screen.colorDepth
 
 const browserWindowSize = () => `${window.outerWidth}x${window.outerHeight} and ${window.innerWidth}x${window.innerHeight}.` // full browser window size, and browser layout size. A bit unreliable because of browsers' zoom feature. 
@@ -71,6 +73,14 @@ function adblocking() {
 	let result = document.getElementsByClassName('adsbox')[0].offsetHeight === 0;
 	document.body.removeChild(ads)
 	return result
+}
+
+function renderer() {
+	if (1 == !!window.WebGLRenderingContext || 1 == !!window.WebGL2RenderingContext) {
+		let canvas = document.createElement("canvas");
+		let webgl = canvas.getContext("webgl2") || canvas.getContext("webgl") || canvas.getContext("experimental-webgl2") || canvas.getContext("experimental-webgl");
+		return webgl.getParameter(webgl.getExtension("WEBGL_debug_renderer_info").UNMASKED_RENDERER_WEBGL)
+	}
 }
 
 
