@@ -28,6 +28,10 @@ const colorDepth = () => window.screen.colorDepth
 
 const browserWindowSize = () => `${window.outerWidth}x${window.outerHeight} and ${window.innerWidth}x${window.innerHeight}.` // full browser window size, and browser layout size. A bit unreliable because of browsers' zoom feature. 
 
+const pageLoadTime = () => window.performance.timing.loadEventEnd - window.performance.timing.navigationStart // in ms
+// PerformanceTiming is deprecated. Replace with PerformanceNavigationTiming if necessary.
+const requestResponseTime = () => window.performance.timing.responseEnd - window.performance.timing.requestStart // in ms
+
 function screenResolution() {
 	let pixelRatio = window.devicePixelRatio || 1;
 	let normalized = [Math.round(screen.width * pixelRatio), Math.round(screen.height * pixelRatio)]
