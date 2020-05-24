@@ -1,7 +1,7 @@
 
 const userAgent = () => navigator.userAgent // Chrome Phasing out Support for User Agent by September, and will instead offer a new API called Client Hints.
 
-const storage = () => [!!window.localStorage, !!window.sessionStorage, !!window.indexedDB, localStorage.length, localStorage.key(0)]
+const storage = () => [!!window.localStorage, !!window.sessionStorage, !!window.indexedDB]
 
 const fullscreen = () => document.fullscreenEnabled
 
@@ -136,7 +136,12 @@ function webGL() {
 	gl.vertexAttribPointer(program.vertexPosAttrib, vertexPosBuffer.itemSize, gl.FLOAT, !1, 0, 0)
 	gl.uniform2f(program.offsetUniform, 1, 1)
 	gl.drawArrays(gl.TRIANGLE_STRIP, 0, vertexPosBuffer.numItems)
-	return gl.canvas.toDataURL()
+	let data = gl.canvas.toDataURL()
+	let hash = 0;
+	for (let i = 0; i < data.length; i++) {
+		hash = (((hash<<5) - hash) + data.charCodeAt(i));
+	}
+	return (hash&0xFFFFFFFF).toString(16);
 }
 
 function canvas(){
@@ -202,4 +207,4 @@ function accounts() {
     return loggedInto
 };
 
-const techniques = [userAgent, storage, fullscreen, deviceMemory, hardwareConcurrency, doNotTrack, sessionHistory, cookieEnabled, webdriver, timezone, referrer, colorDepth, browserWindowSize, pageLoadTime, requestResponseTime, screenResolution, language, cssMediaFeatures, timeOfVisit, networkInfo, aspectRatio, adblocking, renderer, domRect, webGL, canvas, accounts]
+const techniques = [userAgent, storage, fullscreen, deviceMemory, hardwareConcurrency, doNotTrack, sessionHistory, cookieEnabled, webdriver, timezone, referrer, colorDepth, browserWindowSize, pageLoadTime, requestResponseTime, screenResolution, language, cssMediaFeatures, timeOfVisit, networkInfo, aspectRatio, adblocking, renderer, domRect, webGL, canvas, ]//accounts
