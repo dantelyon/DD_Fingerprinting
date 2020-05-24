@@ -1,6 +1,5 @@
 
-const userAgent = () => navigator.userAgent
-// Chrome Phasing out Support for User Agent by September, and will instead offer a new API called Client Hints.
+const userAgent = () => navigator.userAgent // Chrome Phasing out Support for User Agent by September, and will instead offer a new API called Client Hints.
 
 const storage = () => [!!window.localStorage, !!window.sessionStorage, !!window.indexedDB, localStorage.length, localStorage.key(0)]
 
@@ -53,11 +52,13 @@ function timeOfVisit() {
 }
 
 function networkInfo() { // limited availability
-	return {
-		rtt: navigator.connection.rtt,
-		downlink: navigator.connection.downlink,
-		effectiveType: navigator.connection.effectiveType,
-		saveData: navigator.connection.saveData,
+	if (navigator.connection) {
+		return {
+			rtt: navigator.connection.rtt,
+			downlink: navigator.connection.downlink,
+			effectiveType: navigator.connection.effectiveType,
+			saveData: navigator.connection.saveData,
+		}
 	}
 }
 
@@ -98,6 +99,7 @@ function domRect(){
 	s.webkitTransformOrigin = '0.1px 0.2px 0.3px';
 	s.webkitTransform = 'scale(1.01123) matrix3d(0.251106, 0.0131141, 0, -0.000109893, -0.0380797, 0.349552, 0, 7.97469e-06, 0, 0, 1, 0, 575, 88, 0, 1)';
 	s.transform = 'scale(1.01123) matrix3d(0.251106, 0.0131141, 0, -0.000109893, -0.0380797, 0.349552, 0, 7.97469e-06, 0, 0, 1, 0, 575, 88, 0, 1)';
+	elem.innerHTML = '<h1>Sed ut perspiciatis unde</h1>dahlberg<b>dahl<i id="target">dahl</i></b>';
 	document.body.appendChild(elem);
 	let rect = document.getElementById('target').getClientRects()[0];
 	elem.remove();
@@ -200,3 +202,4 @@ function accounts() {
     return loggedInto
 };
 
+const techniques = [userAgent, storage, fullscreen, deviceMemory, hardwareConcurrency, doNotTrack, sessionHistory, cookieEnabled, webdriver, timezone, referrer, colorDepth, browserWindowSize, pageLoadTime, requestResponseTime, screenResolution, language, cssMediaFeatures, timeOfVisit, networkInfo, aspectRatio, adblocking, renderer, domRect, webGL, canvas, accounts]
