@@ -1,6 +1,4 @@
 
-
-
 const userAgent = () => navigator.userAgent
 // Chrome Phasing out Support for User Agent by September, and will instead offer a new API called Client Hints.
 
@@ -142,8 +140,8 @@ function webGL() {
 function canvas(){
 	let canvas = document.createElement("canvas")
 	let context = canvas.getContext("2d")
-    canvas.width = 320
-    canvas.height = 200
+	canvas.width = 320
+	canvas.height = 200
 	context.font = "14px 'Arial'"
 	context.fillStyle = "#f60"
 	context.fillRect(20, 1, 62, 100)
@@ -161,4 +159,44 @@ function canvas(){
 	return (hash&0xFFFFFFFF).toString(16);
 }
 
+function accounts() {
+    const platforms = {
+        "VK": "https://vk.com/login?u=2&to=ZmF2aWNvbi5pY28-",
+        "Indeed": "https://secure.indeed.com/account/login?continue=%2ffavicon.ico",
+        "BitBucket": "https://bitbucket.org/account/signin/?next=/favicon.ico",
+        "Meetup": "https://secure.meetup.com/login/?returnUri=https%3A%2F%2Fwww.meetup.com%2Fimg%2Fajax_loader_trans.gif",
+        "Khan Academy": "https://www.khanacademy.org/login?continue=https%3A//www.khanacademy.org/favicon.ico",
+        "Twitch": "www.twitch.tv/login?redirect_on_login=/favicon.ico",
+        "Disqus": "https://disqus.com/profile/login/?next=https%3A%2F%2Fdisqus.com%2Ffavicon.ico",
+        "Airbnb": "https://www.airbnb.com/login?redirect_params[action]=favicon.ico&redirect_params[controller]=home",
+        "Paypal": "https://www.paypal.com/signin?returnUri=https://t.paypal.com/ts?v=1.0.0",
+        "Slack": "https://slack.com/checkcookie?redir=https%3A%2F%2Fslack.com%2Ffavicon.ico%23",
+        "Edx": "https://courses.edx.org/login?next=/favicon.ico",
+        "Hackernews": "https://news.ycombinator.com/login?goto=y18.gif%23",
+        "Medium": "https://medium.com/m/signin?redirect=https%3A%2F%2Fmedium.com%2Ffavicon.ico&loginType=default",
+        "Github": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Ffavicon.ico%3Fid%3D1",
+        "Steam": "https://store.steampowered.com/login/?redir=favicon.ico",
+        "Battle.net": "https://eu.battle.net/login/de/index?ref=http://eu.battle.net/favicon.ico",
+        "Pinterest": "https://www.pinterest.com/login/?next=https%3A%2F%2Fwww.pinterest.com%2Ffavicon.ico",
+        "Amazon": "https://www.amazon.com/ap/signin/178-4417027-1316064?_encoding=UTF8&openid.assoc_handle=usflex&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.mode=checkid_setup&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&openid.ns.pape=http%3A%2F%2Fspecs.openid.net%2Fextensions%2Fpape%2F1.0&openid.pape.max_auth_age=10000000&openid.return_to=https%3A%2F%2Fwww.amazon.com%2Ffavicon.ico",
+        "Dropbox": "https://www.dropbox.com/login?cont=https%3A%2F%2Fwww.dropbox.com%2Fstatic%2Fimages%2Fabout%2Fdropbox_logo_glyph_2015.svg",
+        "Expedia": "https://www.expedia.de/user/login?ckoflag=0&selc=0&uurl=qscr%3Dreds%26rurl%3D%252Ffavicon.ico",
+        "Tumblr": "https://www.tumblr.com/login?redirect_to=%2Ffavicon.ico",
+        "Reddit": "https://www.reddit.com/login?dest=https%3A%2F%2Fwww.reddit.com%2Ffavicon.ico",
+        "Spotify": "https://www.spotify.com/en/login/?forward_url=https%3A%2F%2Fwww.spotify.com%2Ffavicon.ico",
+        "Skype": "https://login.skype.com/login?message=signin_continue&redirect_uri=https%3A%2F%2Fsecure.skype.com%2Ffavicon.ico",
+        "Youtube": "https://accounts.google.com/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Ffavicon.ico&uilel=3&hl=en&service=youtube",
+        "Gmail": "https://accounts.google.com/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.google.com%2Ffavicon.ico&uilel=3&hl=en&service=mail",
+        "Facebook": "https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Ffavicon.ico%3F_rdr%3Dp",
+        "Twitter": "https://twitter.com/login?redirect_after_login=%2f..%2ffavicon.ico"
+    }
+    let loggedInto = []
+    for (let property in platforms){
+        let img = document.createElement("img");
+        img.referrerPolicy = "no-referrer";
+        img.src = platforms[property];
+        img.onload = () => loggedInto.push(property);
+    }
+    return loggedInto
+};
 
