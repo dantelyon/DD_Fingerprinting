@@ -23,8 +23,6 @@ const referrer = () => document.referrer // unreliable
 
 const colorDepth = () => window.screen.colorDepth
 
-const browserWindowSize = () => `${window.outerWidth}x${window.outerHeight} and ${window.innerWidth}x${window.innerHeight}.` // full browser window size, and browser layout size. A bit unreliable because of browsers' zoom feature. 
-
 const pageLoadTime = () => window.performance.timing.loadEventEnd - window.performance.timing.navigationStart // in ms
 // PerformanceTiming is deprecated. Replace with PerformanceNavigationTiming if necessary.
 const requestResponseTime = () => window.performance.timing.responseEnd - window.performance.timing.requestStart // in ms
@@ -284,5 +282,27 @@ document.addEventListener('mousemove', event => {
 });
 }
 
+// full browser window size, and browser layout size. A bit unreliable because of browsers' zoom feature. 
+function browserWindowSize() {
+	document.getElementById("browser-window").innerText = `${window.outerWidth}x${window.outerHeight} and ${window.innerWidth}x${window.innerHeight}.`
+	window.addEventListener('resize', event => {
+		document.getElementById("browser-window").innerText = `${window.outerWidth}x${window.outerHeight} and ${window.innerWidth}x${window.innerHeight}.`
+	});
+}
 
-const techniques = [userAgent, storage, fullscreen, deviceMemory, hardwareConcurrency, doNotTrack, sessionHistory, cookieEnabled, webdriver, timezone, referrer, colorDepth, browserWindowSize, pageLoadTime, requestResponseTime, screenResolution, language, cssMediaFeatures, timeOfVisit, networkInfo, aspectRatio, adblocking, renderer, domRect, webGL, canvas, ]//accounts
+function sessionDuration() {
+	window.addEventListener("load", e => {
+		setInterval(() => document.getElementById('duration').textContent = (performance.now()/1000).toFixed(1), 100)
+})
+}
+
+function tabchanges() {
+let tabchanges = []
+window.addEventListener('visibilitychange', event => {
+	if (document.hidden) tabchanges.push(event.timeStamp);
+	document.getElementById("tab-changes").innerText = tabchanges.length
+});
+}
+
+
+const techniques = [userAgent, storage, fullscreen, deviceMemory, hardwareConcurrency, doNotTrack, sessionHistory, cookieEnabled, webdriver, timezone, referrer, colorDepth, pageLoadTime, requestResponseTime, screenResolution, language, cssMediaFeatures, timeOfVisit, networkInfo, aspectRatio, adblocking, renderer, domRect, webGL, canvas, ]//accounts

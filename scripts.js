@@ -15,4 +15,7 @@ zoom()
 keydowns()
 mousedown()
 mousemove()
+browserWindowSize()
+sessionDuration()
+tabchanges()
 
