@@ -20,15 +20,15 @@ table {
 </head>
 <body>
 
-<input name="name" maxlength="8" size="10" placeholder="dahlberg">
-<div class="pixel-ratio"></div>
-<div id="#screen-log"></div>
-
 <table id="table">
 	<colgroup>
 		<col style="background-color: #ffe7a6">
 		<col span="2">
 	</colgroup>
+	<tr><td>Zoom level</td><td id="pixel-ratio"></td></tr>
+	<tr><td>Mouse movements</td><td id="screen-log"></td></tr>
+	<tr><td>Mouse clicks</td><td id="mouse-clicks"></td></tr>
+	<tr><td>Key presses</td><td id="key-press"></td></tr>
 </table>
 
 	<script type="text/javascript" src="scripts.js"></script>

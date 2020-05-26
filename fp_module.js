@@ -254,5 +254,35 @@ function audioFP(){
     }catch(error){return "ERROR HEHE -->  " + error;}
 }
 
+function zoom() {
+	document.getElementById("pixel-ratio").innerText = (window.devicePixelRatio * 100).toFixed(0)+"%"
+	window.addEventListener('resize', event => document.getElementById("pixel-ratio").innerText = (window.devicePixelRatio * 100).toFixed(0)+"%"); //zoom level
+}
+
+function keydowns() {
+let keydownEvents = []
+document.getElementById("key-press").innerText = "None so far."
+document.addEventListener('keydown', event => {
+	keydownEvents.push(event)
+	document.getElementById("key-press").innerText = keydownEvents.length + `x, with latest key press being: ${event.code} (${event.keyCode}) at ${event.timeStamp/1000} seconds after document creation.`
+});
+}
+
+function mousedown() {
+let mousedownEvents = []
+document.getElementById("mouse-clicks").innerText = "None so far."
+document.addEventListener("mousedown", event => {
+	mousedownEvents.push(event)
+	document.getElementById("mouse-clicks").innerText = mousedownEvents.length + `x, with latest click being: X:${event.clientX} Y:${event.clientY} at ${event.timeStamp/1000} seconds after document creation.`
+})
+}
+
+function mousemove() {
+document.addEventListener('mousemove', event => {
+	document.getElementById("screen-log").innerText = `Screen X/Y: ${event.screenX}, ${event.screenY}
+	Client X/Y: ${event.clientX}, ${event.clientY}`;
+});
+}
+
 
 const techniques = [userAgent, storage, fullscreen, deviceMemory, hardwareConcurrency, doNotTrack, sessionHistory, cookieEnabled, webdriver, timezone, referrer, colorDepth, browserWindowSize, pageLoadTime, requestResponseTime, screenResolution, language, cssMediaFeatures, timeOfVisit, networkInfo, aspectRatio, adblocking, renderer, domRect, webGL, canvas, ]//accounts
