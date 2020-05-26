@@ -207,4 +207,52 @@ function accounts() {
     return loggedInto
 };
 
+
+function audioFP(){
+    if (navigator.userAgent.match(/OS 11.+Version\/11.+Safari/)) return "exluded"
+    /* Safari on iOS 11 seems to automatically suspend new AudioContext's that aren't created in response to a tap. You can resume() them, but only in response to a tap. 
+        Chrome mobile also does this, and Chrome desktop will have the same limitation starting in version 70 / December 2018. */
+    
+    try{
+    	let AudioContext = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+        if (AudioContext == null) return
+        let audioContext = new AudioContext(1, 44100, 44100)
+
+        let destination = audioContext.destination
+        let oscillator = audioContext.createOscillator()
+        oscillator.type = 'triangle'
+        oscillator.frequency.setValueAtTime(10000, audioContext.currentTime)
+        let compressor = audioContext.createDynamicsCompressor()
+        compressor.threshold && (compressor.threshold.value = -50);
+        compressor.knee && (compressor.knee.value = 40);
+        compressor.attack && (compressor.attack.value = 0);
+
+        oscillator.connect(compressor)
+        compressor.connect(destination)
+        oscillator.start(0)
+        audioContext.startRendering()
+        audioContext.oncomplete = (event) => {
+          let fingerprint
+          try {
+          	fingerprint = event.renderedBuffer.getChannelData(0)
+              .slice(4500, 5000)
+              .reduce((acc, val) => acc + Math.abs(val), 0)
+              .toString()
+            oscillator.disconnect()
+        	compressor.disconnect()
+          } catch (error) {return error}
+          const audioData = (audioContext.sampleRate).toString() + '_' + destination.maxChannelCount + "_" + destination.numberOfInputs + '_' + destination.numberOfOutputs + '_' + destination.channelCount + '_' + destination.channelCountMode + '_' + destination.channelInterpretation;
+          let tr = document.createElement("tr")
+          let td1 = document.createElement("td")
+          let td2 = document.createElement("td")
+          td1.innerHTML = "audio FP"
+          td2.innerHTML = fingerprint + " and " + audioData
+          tr.appendChild(td1)
+          tr.appendChild(td2)
+          document.getElementById("table").appendChild(tr)
+        }
+    }catch(error){return "ERROR HEHE -->  " + error;}
+}
+
+
 const techniques = [userAgent, storage, fullscreen, deviceMemory, hardwareConcurrency, doNotTrack, sessionHistory, cookieEnabled, webdriver, timezone, referrer, colorDepth, browserWindowSize, pageLoadTime, requestResponseTime, screenResolution, language, cssMediaFeatures, timeOfVisit, networkInfo, aspectRatio, adblocking, renderer, domRect, webGL, canvas, ]//accounts

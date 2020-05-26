@@ -10,6 +10,7 @@ techniques.forEach(t => {
 	tr.appendChild(td2)
 	document.getElementById("table").appendChild(tr)
 })
+audioFP()
 
 window.addEventListener('resize', event => document.querySelector(".pixel-ratio").innerText = (window.devicePixelRatio * 100).toFixed(0)+"%"); //zoom level
 
