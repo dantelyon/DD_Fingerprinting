@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Text from './Text.js'
 import Table from './Table.js'
+import Glows from './Glows.js'
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 		<Text />
 		<button>Show me my fingerprint</button>
 		<Table />
+    <Glows />
     </div>
   );
 }
