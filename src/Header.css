@@ -1,0 +1,31 @@
+
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5em;
+    border-bottom: solid 5px;
+  }
+  .Header-title {
+    font-size: 2.0em;
+    word-spacing: .08em;
+    letter-spacing: -.015em;
+    margin: 0 0 .15em;
+  }
+  .Header-title a {
+    color: inherit;
+  }
+ 
+  .Header-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  .Header-button {
+    color: inherit;
+    font-size: 1.5em;
+  }
+  .Header-button:first-child {
+    margin: 0 1em 0 0
+  }
