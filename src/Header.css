@@ -23,7 +23,7 @@
     flex: 1;
   }
   .Header-button {
-    color: inherit;
+    color: #a1ecfb;
     font-size: 1.5em;
   }
   .Header-button:first-child {

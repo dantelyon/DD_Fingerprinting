@@ -1,4 +1,35 @@
 
+@import url("//fonts.googleapis.com/css?family=Titillium+Web:400,600");
+
+body {
+  margin: 0;
+  background-color: #021114;
+  font-family: "Titillium Web", sans-serif;
+}
+.App {
+  max-width: 50em;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  color: #26dafd;
+}
+
+p {
+  margin: 0 0 1.5em;
+  font-weight: 400;
+  font-size: 1.2em;
+  line-height: 1.4;
+}
+h1 {
+  color: #a1ecfb;
+}
+a {
+  text-decoration: none;
+}
+main {
+  padding: 1.5em 1.5em 0;
+}
 table, th, td {
   padding: 5px;
   border: 1px solid black;
@@ -8,34 +39,5 @@ table {
   border-spacing: 0px;
   margin: 20px;
 }
-@import url("//fonts.googleapis.com/css?family=Titillium+Web:400,600");
-body {
-  margin: 0;
-  background-color: #021114;
-  --text-opacity: 1;
-  font-size: 16px;
-  font-family: "Titillium Web", "sans-serif";
-}
-h1 {
-  font-size: 28px;
-  color: #a1ecfb;
-}
-p {
-  color: #26dafd;
-}
-.App {
-  color: #a1ecfb;
-  max-width: 50em;
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-a {
-  text-decoration: none;
-}
-
-
-
 
 

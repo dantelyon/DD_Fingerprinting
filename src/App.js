@@ -10,12 +10,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-
-{      /*
+      <main>
+       
       <Text />
       <button>Show me my fingerprint</button>
       <Table />
-<Glows />*/}
+<Glows />
+      </main>
     </div>
   );
 }
