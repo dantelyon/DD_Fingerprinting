@@ -1,17 +1,25 @@
 
+header {
+  border-bottom: solid 3px rgba(42, 215, 250, 0.433);
+  background-color: rgba(2,17,20,0.65);
+}
+
 .Header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1.5em;
-    border-bottom: solid 5px;
+    max-width: 50em;
+    margin: 0 auto;
   }
+
   .Header-title {
     font-size: 2.0em;
     word-spacing: .08em;
     letter-spacing: -.015em;
     margin: 0 0 .15em;
   }
+
   .Header-title a {
     color: inherit;
   }
@@ -22,10 +30,12 @@
     justify-content: flex-end;
     flex: 1;
   }
+
   .Header-button {
-    color: #a1ecfb;
+    color: #9de9f8;
     font-size: 1.5em;
   }
+
   .Header-button:first-child {
     margin: 0 1em 0 0
   }

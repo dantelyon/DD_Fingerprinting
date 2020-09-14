@@ -11,11 +11,11 @@ function App() {
     <div className="App">
       <Header />
       <main>
-       
-      <Text />
-      <button>Show me my fingerprint</button>
-      <Table />
-<Glows />
+        <div className="container">
+          <Text />
+          <Table />
+          <Glows />
+        </div>
       </main>
     </div>
   );
