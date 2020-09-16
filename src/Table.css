@@ -1,0 +1,21 @@
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    color: #93ffff;
+    font-size: 20px;
+}
+
+td {
+    border: 1px solid rgba(1, 89, 187, 0.65);
+    padding: .15rem .35rem;
+}
+
+#col1 {
+    background-color: rgba(0, 13, 58, 0.65);
+}
+
+#col2 {
+    background-color: rgba(0,21,97,0.65);
+}
