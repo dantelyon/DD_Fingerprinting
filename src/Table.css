@@ -19,3 +19,7 @@ td {
 #col2 {
     background-color: rgba(0,21,97,0.65);
 }
+
+.hiddenTable {
+    display: none;
+  }

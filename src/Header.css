@@ -39,3 +39,8 @@ header {
   .Header-button:first-child {
     margin: 0 1em 0 0
   }
+
+  .Header span:hover {
+    color: #e6fbff;
+    cursor: pointer;
+  }
