@@ -15,7 +15,6 @@ header {
 
   .Header-title {
     font-size: 2.0em;
-    word-spacing: .08em;
     letter-spacing: -.015em;
     margin: 0 0 .15em;
   }
@@ -40,7 +39,25 @@ header {
     margin: 0 1em 0 0
   }
 
-  .Header span:hover {
+  .Header span:hover, .Header-title:hover {
     color: #e6fbff;
     cursor: pointer;
+  }
+
+  /* TEXT REFLECTION EFFECT */
+  .Header-title {
+    position: absolute;
+  }
+  .Header-title:before {
+    content: "Mirror";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: bottom;
+    transform: rotateX(180deg);
+    line-height: 1.02em;
+    background: linear-gradient(0deg, #9de9f8 0, transparent 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }

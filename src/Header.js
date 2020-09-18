@@ -6,7 +6,7 @@ class Header extends React.Component {
         return (
             <header>
                 <div className="Header">
-                    <h1 className="Header-title"><span onClick={this.props.showTable}>Mirror-FP</span></h1>
+                    <h1 className="Header-title" onClick={this.props.showTable}>Mirror Fingerprint</h1>
                     <div className="Header-buttons">
                         <span className="Header-button" onClick={this.props.showAbout}>About</span>
                         <a className="Header-button" href="https://github.com/" rel="noreferrer noopener" target="_blank">Github</a>
