@@ -20,7 +20,7 @@
   }
   
   @keyframes glowboys-ascend {
-    0% {top:100%; opacity: 0.4;}
+    0% {top:100%; opacity: 0.2;}
     30%, 70% {opacity: 0.9;}
     100%{top:-10%; opacity: 0.4;}
   }

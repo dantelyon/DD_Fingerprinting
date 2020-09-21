@@ -16,6 +16,7 @@ class App extends React.Component {
     this.showTable = this.showTable.bind(this);
     this.showAbout = this.showAbout.bind(this);
   }
+
   showTable = () => this.setState(() => ({showTable: true, showAbout: false}));
   showAbout = () => this.setState(() => ({showAbout: true, showTable: false}));
 
