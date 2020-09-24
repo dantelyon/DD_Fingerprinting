@@ -52,12 +52,7 @@ const static_techniques = [
 	return [date.getMonth(), date.getDate(), day, date.toLocaleTimeString()]}},
 
     {name: "Network info", value: function() {	if (navigator.connection) { // limited availability
-		return {
-			rtt: navigator.connection.rtt,
-			downlink: navigator.connection.downlink,
-			effectiveType: navigator.connection.effectiveType,
-			saveData: navigator.connection.saveData,
-		}
+        return ["rtt: "+navigator.connection.rtt, "downlink: "+navigator.connection.downlink, "effectiveType: "+navigator.connection.effectiveType, "saveData: "+ navigator.connection.saveData]
 	} else {return "unsupported"}}},
 
     {name: "Aspect ratio", value: function() {	const gcd = (a,b) => !b ? a : gcd(b,a%b) // greatest common divisor
