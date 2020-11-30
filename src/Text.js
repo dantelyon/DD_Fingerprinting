@@ -5,7 +5,7 @@ class Text extends React.Component {
         return (
         <div id="text-content">
             <p>MirrorFP is a web-based <em>fingerprinting</em> tool for the purpose of <em>personalization</em>. The table shows a reflection, a mirror, of your browser data that's useful for this purpose. Because while the device and browser provide a large range of data, a lot of it is of little to no value for personalization. Emphasis is for the most part on data points and fingerprinting techniques that provide behavioral and dynamic values. {!this.props.isAbout && <span>For more information, see the <a onClick={this.props.showAbout}>About</a> section.</span>}</p>
-            The most predictive data is that which comes from my intervening in your behavior and shaping it toward those courses of action that are going to be most profitable for me because they’re most profitable for my business customers.
+            
             {this.props.isAbout && <div>
                 <p>There are two concepts to be aware of to understand this project: Fingerprinting and Personalization.</p>
                 
