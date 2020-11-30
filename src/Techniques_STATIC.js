@@ -1,6 +1,5 @@
 
 const static_techniques = [
-    
     { // Chrome Phasing out Support for User Agent by September, and will instead offer a new API called Client Hints.
         name: "User Agent",
         value: function() {return navigator.userAgent}
@@ -23,17 +22,23 @@ const static_techniques = [
 
     {name: "Cookies enabled", value: function() {return navigator.cookieEnabled}},
 
+    {name: "Heap memory limit", value: function() {return window.performance.memory ? window.performance.memory.jsHeapSizeLimit : "none"}},
+
     {name: "Webdriver", value: function() {return navigator.webdriver == null ? "not available" : navigator.webdriver}},
 
     {name: "Timezone", value: function() {return Intl.DateTimeFormat().resolvedOptions().timeZone || (new Date()).getTimezoneOffset()}},
 
-    {name: "Referer", value: function() {return document.referrer || "None"}}, // unreliable
+    {name: "Referrer", value: function() {return document.referrer || "None"}}, // unreliable
 
     {name: "Color depth", value: function() {return window.screen.colorDepth}},
 
     {name: "Page load time", value: function() {return (window.performance.timing.loadEventEnd - window.performance.timing.navigationStart) + "ms"}},
-        // PerformanceTiming is deprecated. Replace with PerformanceNavigationTiming if necessary.
+        
     {name: "Request response time", value: function() {return (window.performance.timing.responseEnd - window.performance.timing.requestStart) + "ms"}},
+    // PerformanceTiming is deprecated. Replace with PerformanceNavigationTiming if necessary. Or perhaps 'chrome.csi()'.
+    // let perf = performance.getEntriesByType("navigation")[0];
+    // perf.duration
+    // perf.requestStart - perf.responseStart
 
     {name: "Screen resolution", value: function() {let pixelRatio = window.devicePixelRatio || 1;
         let normalized = [Math.round(window.screen.width * pixelRatio), Math.round(window.screen.height * pixelRatio)]
@@ -60,6 +65,5 @@ const static_techniques = [
         return window.screen.width / divisor + ":" + window.screen.height / divisor}},
 
 ]
-
 
 export default static_techniques

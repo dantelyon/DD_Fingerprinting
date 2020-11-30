@@ -14,8 +14,8 @@ class async_techniques extends React.Component {
             domrect: await domRect(),
             webgl: await webGL(),
 			canvas: await canvas(),
-	});
-
+		});
+		
         let AudioContext = window.OfflineAudioContext || window.webkitOfflineAudioContext;
         if (AudioContext == null) return
         this.audioContext = new AudioContext(1, 44100, 44100)
@@ -170,4 +170,4 @@ function canvas(){
 	return (hash&0xFFFFFFFF).toString(16);
 }
 
-  
+

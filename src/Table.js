@@ -6,7 +6,7 @@ import './Table.css';
 
 
 function Table(props) {
-  return <table className={props.showTable ? "table" : "table hiddenTable"}>
+  return <table className={props.isTable ? "table" : "table hiddenTable"}>
     <colgroup>
       <col id="col1"></col>
       <col id="col2"></col>

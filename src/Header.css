@@ -1,10 +1,13 @@
 
-header {
-  border-bottom: solid 3px rgba(42, 215, 250, 0.433);
-  background-color: rgba(2,17,20,0.65);
-}
+  header {
+    border-bottom: solid 3px rgba(42, 215, 250, 0.433);
+    background-color: rgba(2,17,20,0.65);
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
 
-.Header {
+  .Header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,10 +47,23 @@ header {
     cursor: pointer;
   }
 
+  @media only screen and (max-width: 440px) {
+    .github {
+      display: none;
+    }
+    .Header-title {
+      font-size: 1.8em;
+    }
+    .Header-button {
+      font-size: 1.2em;
+    }
+  }
+
   /* TEXT REFLECTION EFFECT */
   .Header-title {
     position: absolute;
   }
+  
   .Header-title:before {
     content: "Mirror";
     position: absolute;
