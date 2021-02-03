@@ -64,6 +64,9 @@ const static_techniques = [
         let divisor = gcd(window.screen.width, window.screen.height)
         return window.screen.width / divisor + ":" + window.screen.height / divisor}},
 
+    {name: "Adblocker", value: function() {if(document.getElementById('hICiSWQkKVuN')){
+        return "No";} else {return "Yes";}}} //credit to https://www.detectadblock.com/ for this code.
+
 ]
 
 export default static_techniques
