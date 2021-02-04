@@ -65,7 +65,9 @@ const static_techniques = [
         return window.screen.width / divisor + ":" + window.screen.height / divisor}},
 
     {name: "Adblocker", value: function() {if(document.getElementById('hICiSWQkKVuN')){
-        return "No";} else {return "Yes";}}} //credit to https://www.detectadblock.com/ for this code.
+        return "No";} else {return "Yes";}}}, //credit to https://www.detectadblock.com/ for this code.
+
+    {name: "Page reloaded", value: function() {return (performance.getEntriesByType("navigation")[0].type) === "reload" ? "Yes" : "No"}}
 
 ]
 
