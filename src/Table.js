@@ -2,8 +2,6 @@
 import React from 'react';
 import './Table.css';
 import STATIC from './Techniques/STATIC'
-import ASYNC from './Techniques/ASYNC'
-
 import Clicks from './Techniques/Clicks'
 import KeyPresses from './Techniques/KeyPresses'
 import MouseMovement from './Techniques/MouseMovement'
@@ -13,6 +11,11 @@ import TabChanges from './Techniques/TabChanges'
 import Viewport from './Techniques/Viewport'
 import BrowserWindowSize from './Techniques/BrowserWindowSize'
 import ZoomLevel from './Techniques/ZoomLevel'
+import Canvas from './Techniques/Canvas'
+import WebGL from './Techniques/WebGL'
+import DomRect from './Techniques/DomRect'
+import Renderer from './Techniques/Renderer'
+import AudioContext from './Techniques/AudioContext'
 
 
 function Table(props) {
@@ -21,6 +24,11 @@ function Table(props) {
       <col id="col1"></col>
       <col id="col2"></col>
     </colgroup>
+    <AudioContext />
+    <Renderer />
+    <DomRect />
+    <WebGL />
+    <Canvas />
     <ZoomLevel />
     <Viewport />
     <BrowserWindowSize />
@@ -33,7 +41,6 @@ function Table(props) {
     <tbody>
       {STATIC.map(technique => <tr key={technique.name}><td>{technique.name}</td><td>{technique.value()}</td></tr>)}
     </tbody>
-    <ASYNC />
   </table>
 }
 
