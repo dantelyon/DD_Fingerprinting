@@ -4,7 +4,7 @@ class Text extends React.Component {
     render() {
         return (
         <div id="text-content">
-            <p>MirrorFP is a web-based <em>fingerprinting</em> tool for the purpose of e-commerce <em>personalization</em>. The table shows a reflection, a mirror, of your browser data that's useful for this purpose. The device and browser provide a large range of data, but a lot of it is of little to no value for personalization. Emphasis is for the most part on data points and fingerprinting techniques that provide behavioral and dynamic values. {!this.props.isAbout && <span>For more information, see the <a onClick={this.props.showAbout}>About</a> section.</span>}</p>
+            <p>MirrorFP is a web-based <em>fingerprinting</em> tool for the purpose of e-commerce <em>personalization</em>. The table shows a reflection, a mirror, of your browser data that's useful for this purpose. The device and browser provide a large range of data, but a lot of it is of little to no value for personalization. Emphasis is for the most part on data points and fingerprinting techniques that provide behavioral and dynamic values. {!this.props.isAbout && <span>For more information, see the <button className="link-button" onClick={this.props.showAbout}>About</button> section.</span>}</p>
             
             {this.props.isAbout && <div>
                 <p>There are two concepts to be aware of to understand this project: Fingerprinting and Personalization.</p>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class dynamic_techniques extends React.Component {
+class KeyPresses extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -31,4 +31,4 @@ class dynamic_techniques extends React.Component {
       }
 }
 
-export default dynamic_techniques
+export default KeyPresses

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class dynamic_techniques extends React.Component {
+class MouseMovements extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -28,4 +28,4 @@ class dynamic_techniques extends React.Component {
       }
 }
 
-export default dynamic_techniques
+export default MouseMovements

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class dynamic_techniques extends React.Component {
+class TabChanges extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -20,12 +20,13 @@ class dynamic_techniques extends React.Component {
 
       render() {
           return (
-                    <tr>
+              <tr>
                       <td>Tab changes</td>
                       <td>{this.state.tabChanges}</td>
                     </tr>
+                    
           )
       }
 }
 
-export default dynamic_techniques
+export default TabChanges

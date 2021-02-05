@@ -1,6 +1,6 @@
 import React from 'react';
 
-class dynamic_techniques extends React.Component {
+class ZoomLevel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,14 +21,12 @@ class dynamic_techniques extends React.Component {
 
       render() {
           return (
-              <tbody>
                     <tr>
                       <td>Zoom</td>
                       <td>{(window.devicePixelRatio * 100).toFixed(0)+"%"}</td>
                     </tr>
-              </tbody>
           )
       }
 }
 
-export default dynamic_techniques
+export default ZoomLevel

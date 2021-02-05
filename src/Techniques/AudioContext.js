@@ -1,17 +1,21 @@
 import React from 'react';
 
-class async_techniques extends React.Component {
+class AudioContextData extends React.Component {
     constructor(props) {
         super(props);
         this._isMounted = false;
-        this.state = {}
+        this.state = {};
     }
-    
-    async componentDidMount() {
+
+    componentDidMount() {
         this._isMounted = true;
-        this._isMounted && this.setState({
-		});
-		
+        this._isMounted && this.audioData();
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
+
+    async audioData() {
         let AudioContext = window.OfflineAudioContext || window.webkitOfflineAudioContext;
         if (AudioContext == null) return
         this.audioContext = new AudioContext(1, 44100, 44100)
@@ -39,23 +43,21 @@ class async_techniques extends React.Component {
                 .toString()
             this.oscillator.disconnect()
             this.compressor.disconnect()
-			this.setState({audiodata: `${audioFP}, ${audioData}`})
+            this._isMounted && this.setState({
+                audiodata: `${audioFP}, ${audioData}`
+            })
         }
     }
-    
-    componentWillUnmount() {
-        this._isMounted = false;
-    }
-    
+
     render() {
-          return (
-				  <tr>
-                      <td>Audio data</td>
-                      <td>{this.state.audiodata}</td>
-                  </tr>
-          )
-      }
+        return (
+            <tr>
+                <td>Audio data</td>
+                <td>{this.state.audiodata}</td>
+            </tr>
+        )
+    }
 }
 
-export default async_techniques
+export default AudioContextData
 

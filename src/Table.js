@@ -24,20 +24,22 @@ function Table(props) {
       <col id="col1"></col>
       <col id="col2"></col>
     </colgroup>
-    <AudioContext />
-    <Renderer />
-    <DomRect />
-    <WebGL />
-    <Canvas />
-    <ZoomLevel />
-    <Viewport />
-    <BrowserWindowSize />
-    <Clicks />
-    <KeyPresses />
-    <MouseMovement />
-    <MouseWheel />
-    <SessionDuration />
-    <TabChanges />
+    <tbody>
+      <AudioContext />
+      <Renderer />
+      <DomRect />
+      <WebGL />
+      <Canvas />
+      <ZoomLevel />
+      <Viewport />
+      <BrowserWindowSize />
+      <Clicks />
+      <KeyPresses />
+      <MouseMovement />
+      <MouseWheel />
+      <SessionDuration />
+      <TabChanges />
+    </tbody>
     <tbody>
       {STATIC.map(technique => <tr key={technique.name}><td>{technique.name}</td><td>{technique.value()}</td></tr>)}
     </tbody>

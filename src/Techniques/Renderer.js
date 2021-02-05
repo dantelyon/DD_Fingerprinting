@@ -1,41 +1,37 @@
 import React from 'react';
 
-class async_techniques extends React.Component {
+class Renderer extends React.Component {
     constructor(props) {
         super(props);
         this._isMounted = false;
-        this.state = {}
+        this.state = {};
     }
-    
-    async componentDidMount() {
+    componentDidMount() {
         this._isMounted = true;
-        this._isMounted && this.setState({
-            renderer: await renderer(),
-		});
-		
+        this._isMounted && this.renderer();
     }
-    
     componentWillUnmount() {
         this._isMounted = false;
     }
-    
+    async renderer() {
+        if (window.WebGLRenderingContext || window.WebGL2RenderingContext) {
+            let canvas = document.createElement("canvas");
+            let webgl = canvas.getContext("webgl2") || canvas.getContext("webgl") || canvas.getContext("experimental-webgl2") || canvas.getContext("experimental-webgl");
+            let rendererData = await webgl.getParameter(webgl.getExtension("WEBGL_debug_renderer_info").UNMASKED_RENDERER_WEBGL)
+            this._isMounted && this.setState({
+                renderer: rendererData
+            })
+        }
+    }
     render() {
-          return (
-                  <tr>
-                      <td>Renderer</td>
-                      <td>{this.state.renderer}</td>
-                  </tr>
-          )
-      }
+        return (
+            <tr>
+                <td>Renderer</td>
+                <td>{this.state.renderer}</td>
+            </tr>
+        )
+    }
 }
 
-export default async_techniques
+export default Renderer
 
-
-function renderer() {
-	if (window.WebGLRenderingContext || window.WebGL2RenderingContext) {
-		let canvas = document.createElement("canvas");
-		let webgl = canvas.getContext("webgl2") || canvas.getContext("webgl") || canvas.getContext("experimental-webgl2") || canvas.getContext("experimental-webgl");
-		return webgl.getParameter(webgl.getExtension("WEBGL_debug_renderer_info").UNMASKED_RENDERER_WEBGL)
-	}
-}

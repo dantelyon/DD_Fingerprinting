@@ -1,6 +1,6 @@
 import React from 'react';
 
-class dynamic_techniques extends React.Component {
+class SessionDuration extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,12 +16,13 @@ class dynamic_techniques extends React.Component {
 
       render() {
           return (
-                    <tr>
+              <tr>
                       <td>Session duration</td>
                       <td>{Math.floor(this.state.sessionDuration / 60) + " minutes"}</td>
                     </tr>
+                    
           )
       }
 }
 
-export default dynamic_techniques
+export default SessionDuration
