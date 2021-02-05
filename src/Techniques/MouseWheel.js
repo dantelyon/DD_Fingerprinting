@@ -4,27 +4,29 @@ class MouseWheel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            mouseWheels: 0,
+          mouseWheels: 0,
         }
         this.handleWheels = this.handleWheels.bind(this);
       }
+
       componentDidMount() {
         window.addEventListener('wheel', this.handleWheels);
       }
       componentWillUnmount() {
         window.removeEventListener('wheel', this.handleWheels);
       }
+
       handleWheels() {
         this.setState(prevState => ({mouseWheels: prevState.mouseWheels + 1}))
       }
 
       render() {
-          return (
-                    <tr>
-                      <td>Mouse wheel events</td>
-                      <td>{this.state.mouseWheels}</td>
-                    </tr>
-          )
+        return (
+          <tr>
+            <td>Mouse wheel events</td>
+            <td>{this.state.mouseWheels}</td>
+          </tr>
+        )
       }
 }
 

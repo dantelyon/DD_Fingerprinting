@@ -6,6 +6,7 @@ class CanvasData extends React.Component {
         this._isMounted = false;
         this.state = {};
     }
+
     componentDidMount() {
         this._isMounted = true;
         this._isMounted && this.canvas();
@@ -13,6 +14,7 @@ class CanvasData extends React.Component {
     componentWillUnmount() {
         this._isMounted = false;
     }
+
     async canvas() {
         let canvas = document.createElement("canvas")
 		let context = canvas.getContext("2d")
@@ -36,6 +38,7 @@ class CanvasData extends React.Component {
             canvashash: (hash&0xFFFFFFFF).toString(16)
         })
     }
+    
     render() {
         return (
             <tr>

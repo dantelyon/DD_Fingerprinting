@@ -6,6 +6,7 @@ class Renderer extends React.Component {
         this._isMounted = false;
         this.state = {};
     }
+
     componentDidMount() {
         this._isMounted = true;
         this._isMounted && this.renderer();
@@ -13,6 +14,7 @@ class Renderer extends React.Component {
     componentWillUnmount() {
         this._isMounted = false;
     }
+
     async renderer() {
         if (window.WebGLRenderingContext || window.WebGL2RenderingContext) {
             let canvas = document.createElement("canvas");
@@ -23,6 +25,7 @@ class Renderer extends React.Component {
             })
         }
     }
+    
     render() {
         return (
             <tr>

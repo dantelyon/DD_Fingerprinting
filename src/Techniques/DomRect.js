@@ -6,6 +6,7 @@ class DomRect extends React.Component {
         this._isMounted = false;
         this.state = {};
     }
+
     componentDidMount() {
         this._isMounted = true;
         this._isMounted && this.domRectData();
@@ -13,6 +14,7 @@ class DomRect extends React.Component {
     componentWillUnmount() {
         this._isMounted = false;
     }
+
     async domRectData() {
         let elem = document.createElement('div');
         let s = elem.style;
@@ -34,6 +36,7 @@ class DomRect extends React.Component {
             domrectHeight: rect.height
         })
     }
+    
     render() {
         return (
             <tr>

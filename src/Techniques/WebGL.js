@@ -6,6 +6,7 @@ class WebGLData extends React.Component {
         this._isMounted = false;
         this.state = {};
     }
+
     componentDidMount() {
         this._isMounted = true;
         this._isMounted && this.webGL();
@@ -13,6 +14,7 @@ class WebGLData extends React.Component {
     componentWillUnmount() {
         this._isMounted = false;
     }
+
     async webGL() {
         let canvas = document.createElement('canvas')
         let gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
@@ -52,6 +54,7 @@ class WebGLData extends React.Component {
             webglhash: (hash&0xFFFFFFFF).toString(16)
         })
     }
+    
     render() {
         return (
             <tr>

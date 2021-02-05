@@ -3,10 +3,7 @@ import React from 'react';
 
 function getWindowDimensions() {
   const { outerWidth: width, outerHeight: height } = window;
-  return {
-    width,
-    height
-  };
+  return { width, height };
 }
 
 function useWindowDimensions() {
@@ -22,7 +19,11 @@ function useWindowDimensions() {
   
   const { height, width } = windowDimensions;
   return (
-    <tr><td>Browser window size</td><td>width: {width} ~ height: {height}</td></tr>
+    <tr>
+      <td>Browser window size</td>
+      <td>width: {width} ~ height: {height}</td>
+    </tr>
   );
 }
+
 export default useWindowDimensions

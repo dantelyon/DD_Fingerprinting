@@ -19,11 +19,14 @@ function useWindowDimensions() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
+
   const { height, width } = windowDimensions;
   return (
-    <tr><td>Viewport</td><td>width: {width} ~ height: {height}</td></tr>
-    
+    <tr>
+      <td>Viewport</td>
+      <td>width: {width} ~ height: {height}</td>
+    </tr>
   );
 }
+
 export default useWindowDimensions
