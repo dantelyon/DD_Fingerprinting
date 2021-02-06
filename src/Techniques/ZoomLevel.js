@@ -4,31 +4,41 @@ class ZoomLevel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          mouseMovement: "None yet",
-          browser: `${window.outerWidth}x${window.outerHeight}`
+          zoom: (window.devicePixelRatio * 100).toFixed(0)
         }
-        this.handleMouse = this.handleMouse.bind(this);
+        this.handleZoom = this.handleZoom.bind(this);
       }
 
       componentDidMount() {
-        window.addEventListener('mousemove', this.handleMouse);
+        window.addEventListener('resize', this.handleZoom);
       }
       componentWillUnmount() {
-        window.removeEventListener('mousemove', this.handleMouse);
+        window.removeEventListener('resize', this.handleZoom);
       }
 
-      handleMouse(event) {
-        this.setState({mouseMovement: event});
+      handleZoom() {
+        this.setState({zoom: (window.devicePixelRatio * 100).toFixed(0)});
       }
 
       render() {
         return (
           <tr>
-            <td>Zoom</td>
-            <td>{(window.devicePixelRatio * 100).toFixed(0)+"%"}</td>
-            </tr>
+            <td>Zoom level</td>
+            <td>{this.state.zoom + "% (Chrome only)"}</td>
+          </tr>
         )
       }
 }
 
 export default ZoomLevel
+
+/* 
+ALTERNATIVE ZOOM DETECTION
+function getZoomValues() {
+  const zoom = Math.round(((window.outerWidth) / window.innerWidth)*100) / 100;
+  const device = Math.round(((window.outerWidth) / window.innerWidth)*100) / 100 * (window.devicePixelRatio || 1);
+  console.log(parseFloat(zoom, 10).toFixed(2));
+  console.log(parseFloat(device, 10).toFixed(2));
+}
+window.addEventListener('resize', getZoomValues);
+*/
