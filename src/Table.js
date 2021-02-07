@@ -16,6 +16,7 @@ import WebGL from './Techniques/WebGL'
 import DomRect from './Techniques/DomRect'
 import Renderer from './Techniques/Renderer'
 import AudioContext from './Techniques/AudioContext'
+import LoggedAccounts from './Techniques/LoggedAccounts'
 
 
 function Table(props) {
@@ -25,6 +26,7 @@ function Table(props) {
       <col id="col2"></col>
     </colgroup>
     <tbody>
+      <LoggedAccounts />
       <AudioContext />
       <Renderer />
       <DomRect />

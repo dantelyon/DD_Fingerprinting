@@ -4,13 +4,13 @@ class SessionDuration extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          sessionDuration: parseInt((performance.now()/1000).toFixed(0.1)),
+          sessionDuration: 0,
         }
       }
 
       componentDidMount() {
-        this.sessionDuration = setInterval(() => { this.setState(prevState => ({sessionDuration: prevState.sessionDuration + 1})) }, 1000);
-      }
+        this.sessionDuration = setInterval(() => { this.setState(prevState => ({sessionDuration: prevState.sessionDuration + 1})) }, 60000);
+      } //Alternatively use performance.now() or document.timeline. Something like Math.floor((performance.now()/60000))
       componentWillUnmount() {
         clearInterval(this.sessionDuration)
       }
@@ -19,7 +19,7 @@ class SessionDuration extends React.Component {
         return (
           <tr>
             <td>Session duration</td>
-            <td>{Math.floor(this.state.sessionDuration / 60) + " minutes"}</td>
+            <td>{this.state.sessionDuration + " minutes"}</td>
           </tr> 
         )
       }
