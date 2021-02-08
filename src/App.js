@@ -22,15 +22,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <Header showAbout={this.showAbout} showTable={this.showTable} />
-      <main>
-        <div className="container">
-          <Text isAbout={this.state.isAbout} showAbout={this.showAbout} />
-          <Table isTable={this.state.isTable} />
-          <Glows />
-        </div>
-      </main>
-    </div>
+        <Header showAbout={this.showAbout} showTable={this.showTable} />
+        <main>
+          <div className="container">
+            <Text isAbout={this.state.isAbout} showAbout={this.showAbout} />
+            <Table isTable={this.state.isTable} />
+            <Glows />
+          </div>
+        </main>
+      </div>
     )
   }
 }
