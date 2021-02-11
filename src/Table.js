@@ -17,6 +17,7 @@ import DomRect from './Techniques/DomRect'
 import Renderer from './Techniques/Renderer'
 import AudioContext from './Techniques/AudioContext'
 import LoggedAccounts from './Techniques/LoggedAccounts'
+import DevToolsOpen from './Techniques/DevToolsOpen'
 
 
 function Table(props) {
@@ -26,6 +27,7 @@ function Table(props) {
       <col id="col2"></col>
     </colgroup>
     <tbody>
+      <DevToolsOpen />
       <LoggedAccounts />
       <AudioContext />
       <Renderer />

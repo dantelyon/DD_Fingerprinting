@@ -50,7 +50,7 @@ const static_techniques = [
 
     {name: "Page reloaded", value: function() {return (performance.getEntriesByType("navigation")[0].type) === "reload" ? "Yes" : "No"}},
 
-    {name: "Last visit", value: function() {let date = new Date(); const currentDate = `${date.getDate()}/${date.getMonth()+1}`; const lastVisit = window.localStorage.lastvisit; if (lastVisit) {window.localStorage.lastvisit = currentDate;return lastVisit;} else {window.localStorage.lastvisit = currentDate;return currentDate;}}},
+    {name: "Last known visit", value: function() {let date = new Date(); const currentDate = `${date.getDate()}/${date.getMonth()+1}`; const lastVisit = window.localStorage.lastvisit; if (lastVisit) {window.localStorage.lastvisit = currentDate;return lastVisit;} else {window.localStorage.lastvisit = currentDate;return currentDate;}}},
 ]
 
 
