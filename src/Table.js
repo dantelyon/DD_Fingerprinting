@@ -18,6 +18,7 @@ import Renderer from './Techniques/Renderer'
 import AudioContext from './Techniques/AudioContext'
 import LoggedAccounts from './Techniques/LoggedAccounts'
 import DevToolsOpen from './Techniques/DevToolsOpen'
+import SpeechVoices from './Techniques/SpeechVoices'
 
 
 function Table(props) {
@@ -27,6 +28,7 @@ function Table(props) {
       <col id="col2"></col>
     </colgroup>
     <tbody>
+      <SpeechVoices />
       <DevToolsOpen />
       <LoggedAccounts />
       <AudioContext />
