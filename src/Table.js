@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './Table.css';
 import STATIC from './Techniques/STATIC'
@@ -19,7 +18,7 @@ import AudioContext from './Techniques/AudioContext'
 import LoggedAccounts from './Techniques/LoggedAccounts'
 import DevToolsOpen from './Techniques/DevToolsOpen'
 import SpeechVoices from './Techniques/SpeechVoices'
-
+import GeoIP from './Techniques/GeoIP'
 
 function Table(props) {
   return <table className={props.isTable ? "table" : "table hiddenTable"}>
@@ -28,6 +27,7 @@ function Table(props) {
       <col id="col2"></col>
     </colgroup>
     <tbody>
+      <GeoIP />
       <SpeechVoices />
       <DevToolsOpen />
       <LoggedAccounts />
