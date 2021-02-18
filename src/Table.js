@@ -19,6 +19,7 @@ import LoggedAccounts from './Techniques/LoggedAccounts'
 import DevToolsOpen from './Techniques/DevToolsOpen'
 import SpeechVoices from './Techniques/SpeechVoices'
 import GeoIP from './Techniques/GeoIP'
+import BatteryLevel from './Techniques/BatteryLevel'
 
 function Table(props) {
   return <table className={props.isTable ? "table" : "table hiddenTable"}>
@@ -27,6 +28,7 @@ function Table(props) {
       <col id="col2"></col>
     </colgroup>
     <tbody>
+      <BatteryLevel />
       <GeoIP />
       <SpeechVoices />
       <DevToolsOpen />
