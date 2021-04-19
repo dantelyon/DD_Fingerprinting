@@ -4,7 +4,7 @@ class BatteryLevel extends React.Component {
     constructor(props) {
         super(props);
         this._isMounted = false;
-        this.state = {batterylevel: 'The Battery Status API is not supported on this platform.'};
+        this.state = {batterylevel: 'The Battery Status API is not supported on your platform.'};
     }
 
     componentDidMount() {
@@ -16,7 +16,7 @@ class BatteryLevel extends React.Component {
     }
 
     getBatteryLevel(battery) {
-        return `${Math.floor(battery.level * 100)}% and ${battery.charging ? "charging." : "discharging."}`
+        return `${Math.floor(battery.level * 100)}% and ${battery.charging ? "charging" : "discharging"}`
     }
     getBatteryData() {
         if ('getBattery' in navigator) {

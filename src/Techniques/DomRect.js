@@ -40,8 +40,8 @@ class DomRect extends React.Component {
     render() {
         return (
             <tr>
-                <td>Dom Rect height</td>
-                <td>{this.state.domrectHeight}</td>
+                <td>DOMRect height</td>
+                <td>{this.state.domrectHeight || "Unavailable"}</td>
             </tr>
         )
     }

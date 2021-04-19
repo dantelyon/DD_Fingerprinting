@@ -3,9 +3,7 @@ import React from 'react';
 class MouseMovements extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-          mouseMovement: "None yet",
-        }
+        this.state = {mouseMovement: 0}
         this.handleMouse = this.handleMouse.bind(this);
       }
 
@@ -24,7 +22,7 @@ class MouseMovements extends React.Component {
         return (
           <tr>
             <td>Mouse movement</td>
-            <td>Screen X/Y: {this.state.mouseMovement.screenX}, {this.state.mouseMovement.screenY}. Client X/Y: {this.state.mouseMovement.clientX}, {this.state.mouseMovement.clientY}</td>
+            <td>{this.state.mouseMovement.clientX || 0}x{this.state.mouseMovement.clientY || 0}</td>
           </tr> 
         )
       }

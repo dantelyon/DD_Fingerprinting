@@ -4,7 +4,9 @@ class CanvasData extends React.Component {
     constructor(props) {
         super(props);
         this._isMounted = false;
-        this.state = {};
+        this.state = {
+            canvashash: "Unavailable"
+        };
     }
 
     componentDidMount() {
@@ -18,6 +20,7 @@ class CanvasData extends React.Component {
     async canvas() {
         let canvas = document.createElement("canvas")
 		let context = canvas.getContext("2d")
+        if (!context) return;
 		canvas.width = 320
 		canvas.height = 200
 		context.font = "14px 'Arial'"

@@ -4,7 +4,7 @@ class Renderer extends React.Component {
     constructor(props) {
         super(props);
         this._isMounted = false;
-        this.state = {};
+        this.state = {renderer: "Unavailable"};
     }
 
     componentDidMount() {

@@ -33,7 +33,7 @@ class DevToolsOpen extends React.Component {
     return (
       <tr>
         <td>Developer tools open</td>
-        <td>{this.state.isOpen ? `${this.state.isOpen}, ${this.state.orientation}` : `${this.state.isOpen}`}</td>
+        <td>{this.state.isOpen ? `Yes, ${this.state.orientation}` : `No`}</td>
       </tr>
     )
   }

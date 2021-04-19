@@ -26,7 +26,7 @@ class KeyPresses extends React.Component {
         return (
           <tr>
             <td>Key presses</td>
-            <td>{this.state.keyDowns.length ? this.state.keyDowns.length + `x, with latest key press being: ${this.state.lastKeydown.code} (${this.state.lastKeydown.keyCode}) at ${this.state.lastKeydown.timeStamp/1000} seconds after document creation.` : "None yet."}</td>
+            <td>{this.state.keyDowns.length ? this.state.keyDowns.length + `, with latest key press being: ${this.state.lastKeydown.code} (${this.state.lastKeydown.keyCode})` : "None yet."}</td>
           </tr>
         )
       }

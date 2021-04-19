@@ -4,7 +4,9 @@ class AudioContextData extends React.Component {
     constructor(props) {
         super(props);
         this._isMounted = false;
-        this.state = {};
+        this.state = {
+            audiodata: "Unavailable",
+        };
     }
 
     componentDidMount() {

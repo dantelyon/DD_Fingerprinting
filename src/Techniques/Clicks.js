@@ -26,7 +26,7 @@ class Clicks extends React.Component {
         return (
           <tr>
             <td>Clicks</td>
-            <td>{this.state.clicks.length ? this.state.clicks.length + `x, with latest click being: X:${this.state.lastClick.clientX} Y:${this.state.lastClick.clientY} at ${this.state.lastClick.timeStamp/1000} seconds after document creation.` : "None yet."}</td>
+            <td>{this.state.clicks.length ? this.state.clicks.length + `, with latest click at: ${this.state.lastClick.clientX}x${this.state.lastClick.clientY}` : "None yet."}</td>
           </tr>
         )
       }

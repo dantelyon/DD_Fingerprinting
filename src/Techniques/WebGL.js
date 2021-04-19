@@ -4,7 +4,7 @@ class WebGLData extends React.Component {
     constructor(props) {
         super(props);
         this._isMounted = false;
-        this.state = {};
+        this.state = {webglhash: "Unavailable"};
     }
 
     componentDidMount() {
@@ -18,6 +18,7 @@ class WebGLData extends React.Component {
     async webGL() {
         let canvas = document.createElement('canvas')
         let gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl')
+        if (!gl) return;
         let vertexPosBuffer = gl.createBuffer()
         let vertices = new Float32Array([-0.2, -0.9, 0, 0.4, -0.26, 0, 0, 0.732134444, 0])
         let program = gl.createProgram()
@@ -59,7 +60,7 @@ class WebGLData extends React.Component {
         return (
             <tr>
                 <td>WebGL hash</td>
-                <td>{this.state.webglhash}</td>
+                <td>{this.state.webglhash || "Unavailable"}</td>
             </tr>
         )
     }

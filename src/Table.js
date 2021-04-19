@@ -8,7 +8,6 @@ import MouseWheel from './Techniques/MouseWheel'
 import SessionDuration from './Techniques/SessionDuration'
 import TabChanges from './Techniques/TabChanges'
 import Viewport from './Techniques/Viewport'
-import BrowserWindowSize from './Techniques/BrowserWindowSize'
 import ZoomLevel from './Techniques/ZoomLevel'
 import Canvas from './Techniques/Canvas'
 import WebGL from './Techniques/WebGL'
@@ -40,7 +39,6 @@ function Table(props) {
       <Canvas />
       <ZoomLevel />
       <Viewport />
-      <BrowserWindowSize />
       <Clicks />
       <KeyPresses />
       <MouseMovement />

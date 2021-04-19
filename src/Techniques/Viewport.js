@@ -2,11 +2,10 @@ import { useState, useEffect } from 'react';
 import React from 'react';
 
 function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window; //Chrome alternative: window.visualViewport
-  return {
-    width,
-    height
-  };
+  //Chrome alternative: window.visualViewport
+  //outerWidth and outerHeight for browser window size.
+  const { innerWidth: width, innerHeight: height } = window;
+  return { width, height };
 }
 
 function useWindowDimensions() {
@@ -24,7 +23,7 @@ function useWindowDimensions() {
   return (
     <tr>
       <td>Viewport</td>
-      <td>width: {width} ~ height: {height}</td>
+      <td>{width}x{height}</td>
     </tr>
   );
 }
