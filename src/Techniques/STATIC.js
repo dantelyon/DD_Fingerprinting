@@ -6,13 +6,13 @@ const static_techniques = [
 
     {name: "Fullscreen available", value: function() {return document.fullscreenEnabled ? "Yes" : "No"}},
 
-    {name: "Device memory", value: function() {return navigator.deviceMemory || "Unavailable for your browser."}}, // limited availability
+    {name: "Device memory", value: function() {return navigator.deviceMemory || "Unavailable"}}, // limited availability
 
     {name: "Hardware concurrency", value: function() {return navigator.hardwareConcurrency || "Unavailable"}},
 
     {name: "Do Not Track", value: function() {const doNotTrack = navigator.doNotTrack === "1" || window.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1"; return doNotTrack ? "Yes" : "No"}},
 
-    {name: "Session history", value: function() {return window.history.length}},
+    {name: "Session history", value: function() {return String(window.history.length)}},
 
     {name: "Cookies enabled", value: function() {return navigator.cookieEnabled ? "Yes" : "No"}},
 
@@ -46,7 +46,7 @@ const static_techniques = [
 
     {name: "Aspect ratio", value: function() {const gcd = (a,b) => !b ? a : gcd(b,a%b); let divisor = gcd(window.screen.width, window.screen.height); return window.screen.width / divisor + ":" + window.screen.height / divisor}}, // gcd = greatest common divisor
 
-    {name: "Adblocker", value: function() {return document.getElementById('hICiSWQkKVuN') ? "No" : "Yes"}},
+    {name: "Adblocker", value: function() {return document.getElementById('hICi_SWQkKVoN') ? "No" : "Yes"}},
 
     {name: "Page reloaded", value: function() {return (performance.getEntriesByType("navigation")[0].type) === "reload" ? "Yes" : "No"}},
 

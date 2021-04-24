@@ -7,22 +7,22 @@
     box-shadow: 0 0 4px 4px rgba(42, 215, 250, 0.433);
     border-radius: 50%;
     background-color: rgba(42, 215, 250, 0.433);
-    position:fixed;
-    top:-10%;
-    z-index:-1;
-    user-select:none;
-    cursor:default;
-    animation-name:glowboys-ascend,glowboys-move;
-    animation-duration:10s,3s;
-    animation-timing-function:linear,ease-in-out;
-    animation-iteration-count:infinite,infinite;
-    animation-play-state:running,running
+    position: fixed;
+    top: -10%;
+    z-index: -1;
+    user-select: none;
+    cursor: default;
+    animation-name: glowboys-ascend, glowboys-move;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    animation-play-state: running, running
   }
   
   @keyframes glowboys-ascend {
     0% {top:100%; opacity: 0.2;}
     30%, 70% {opacity: 0.9;}
-    100%{top:-10%; opacity: 0.4;}
+    100% {top:-10%; opacity: 0.4;}
   }
 
   @keyframes glowboys-move{

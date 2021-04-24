@@ -1,5 +1,5 @@
 import React from 'react';
-import './Glows.css';
+import '../css/Glows.css';
 
 function Glows() {
     const glow = (i) => <div className="glowyboys" key={i}></div>;

@@ -22,7 +22,7 @@ class LoggedAccounts extends React.Component {
         img.referrerPolicy = "no-referrer";
         img.src = "https://accounts.google.com/ServiceLogin?passive=true&continue=https%3A%2F%2Fwww.google.com%2Ffavicon.ico&uilel=3&hl=en&service=mail";
         img.onload = () => this._isMounted && this.setState({loggedIn: true})
-        /* Additional platforms:
+        /* Additional platforms that, from last time of testing, do seem to work:
             "Meetup": "https://secure.meetup.com/login/?returnUri=https%3A%2F%2Fwww.meetup.com%2Fimg%2Fajax_loader_trans.gif",
             "Disqus": "https://disqus.com/profile/login/?next=https%3A%2F%2Fdisqus.com%2Ffavicon.ico",
             "Airbnb": "https://www.airbnb.com/login?redirect_params[action]=favicon.ico&redirect_params[controller]=home",
