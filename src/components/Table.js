@@ -27,11 +27,10 @@ function Table(props) {
       <col id="col2"></col>
     </colgroup>
     <tbody>
-      <BatteryLevel />
-      <GeoIP />
       <SpeechVoices />
       <DevToolsOpen />
       <LoggedAccounts />
+      <GeoIP />
       <AudioContext />
       <Renderer />
       <DomRect />
@@ -45,6 +44,7 @@ function Table(props) {
       <MouseWheel />
       <SessionDuration />
       <TabChanges />
+      <BatteryLevel />
     </tbody>
     <tbody>
       {
