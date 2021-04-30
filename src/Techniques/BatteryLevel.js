@@ -4,7 +4,7 @@ class BatteryLevel extends React.Component {
     constructor(props) {
         super(props);
         this._isMounted = false;
-        this.state = {batterylevel: 'The Battery Status API is not supported on your platform.'};
+        this.state = {};
     }
 
     componentDidMount() {
@@ -28,7 +28,7 @@ class BatteryLevel extends React.Component {
         return (
             <tr>
                 <td>Battery level</td>
-                <td>{this.state.batterylevel}</td>
+                {this.state.batterylevel ?  <td>{this.state.batterylevel}</td> : <td className="unavailableFeature">This feature is unavailable for your browser or device.</td>}
             </tr>
         )
     }

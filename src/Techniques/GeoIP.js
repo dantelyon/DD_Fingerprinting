@@ -33,7 +33,7 @@ class GeoIPLookup extends React.Component {
         return (
             <tr>
                 <td>GeoIP lookup</td>
-                {this.state.success ? <td>{this.state.query} -- {this.state.city}, {this.state.country} -- {this.state.isp}</td> : <td>The request was blocked.</td>}
+                {this.state.success ? <td>{this.state.query} -- {this.state.city}, {this.state.country} -- {this.state.isp}</td> : <td className="unavailableFeature">The request was blocked.</td>}
             </tr>
         )
     }

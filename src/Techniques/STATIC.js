@@ -36,15 +36,13 @@ const static_techniques = [
 
     {name: "Language", value: function() {let lang = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage || "Unavailable"; return navigator.languages.includes(lang) ? navigator.languages.join(", ") : lang}},
 
-    {name: "CSS Media features", value: function() {const mediaFeatures = ["display-mode: browser", "min-color: 6", "any-hover: none", "any-pointer: none", "color-gamut: srgb", "monochrome: 0", "prefers-color-scheme: no-preference", "prefers-reduced-motion: no-preference"].filter(feature => window.matchMedia("("+feature+")").matches); return `${mediaFeatures.length} out of 8.`}},
+    {name: "CSS Media features", value: function() {const mediaFeatures = ["display-mode: browser", "min-color: 6", "any-hover: none", "any-pointer: none", "color-gamut: srgb", "monochrome: 0", "prefers-color-scheme: no-preference", "prefers-reduced-motion: no-preference"].filter(feature => window.matchMedia("("+feature+")").matches); return `${mediaFeatures.length} out of 8`}},
     //return mediaFeatures.map(feature => window.matchMedia("("+feature+")").matches ? 1 : 0).join("")
     //color-gamut and min-color (color-index) are unsupported in Firefox.
 
     {name: "Time of visit", value: function() {let date = new Date(); let day = new Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(date); return `${day}, ${date.toLocaleTimeString()}, ${date.getDate()}/${date.getMonth()+1}`}},
 
-    {name: "Network info", value: function() {if (navigator.connection) {return ["rtt: "+navigator.connection.rtt, "downlink: "+navigator.connection.downlink, "effectiveType: "+navigator.connection.effectiveType, "saveData: "+ navigator.connection.saveData].join(", ")} else {return "Unavailable"}}},
-
-    {name: "Aspect ratio", value: function() {const gcd = (a,b) => !b ? a : gcd(b,a%b); let divisor = gcd(window.screen.width, window.screen.height); return window.screen.width / divisor + ":" + window.screen.height / divisor}}, // gcd = greatest common divisor
+    {name: "Network info", value: function() {if (navigator.connection) {return ["rtt: "+navigator.connection.rtt, "downlink: "+navigator.connection.downlink, "effectiveType: "+navigator.connection.effectiveType, "saveData: "+ navigator.connection.saveData].join(" -- ")} else {return "Unavailable"}}},
 
     {name: "Page reloaded", value: function() {return (performance.getEntriesByType("navigation")[0].type) === "reload" ? "Yes" : "No"}},
 
@@ -52,7 +50,7 @@ const static_techniques = [
 
     {name: "Screen orientation", value: function() {return window.screen.orientation.type || "Unavailable"}}, //window.matchMedia("(orientation: landscape/portrait)").matches;
 
-    {name: "Touch device", value: function() {let isTouchDevice = ("ontouchstart" in window || window.navigator.maxTouchPoints || window.navigator.msMaxTouchPoints); return isTouchDevice ? "Yes" : "No";}}
+    {name: "Touch device", value: function() {let isTouchDevice = window.matchMedia('(pointer: coarse)').matches; return isTouchDevice ? "Yes" : "No";}}
 ]
 
 

@@ -28,17 +28,15 @@ function Table(props) {
       <col id="col2"></col>
     </colgroup>
     <tbody>
-      <SpeechVoices />
-      <DevToolsOpen />
-      <LoggedAccounts />
-      <GeoIP />
-      <AudioContext />
       <Renderer />
       <DomRect />
       <WebGL />
       <Canvas />
+      <GeoIP />
+      <AudioContext />
       <ZoomLevel />
       <Viewport />
+      <DevToolsOpen />
       <Clicks />
       <KeyPresses />
       <MouseMovement />
@@ -46,6 +44,8 @@ function Table(props) {
       <SessionDuration />
       <TabChanges />
       <BatteryLevel />
+      <SpeechVoices />
+      <LoggedAccounts />
       <AdBlocker />
     </tbody>
     <tbody>

@@ -46,7 +46,7 @@ class AudioContextData extends React.Component {
             this.oscillator.disconnect()
             this.compressor.disconnect()
             this._isMounted && this.setState({
-                audiodata: `${audioFP}, ${audioData}`
+                audiodata: `${audioFP} -- ${audioData}`
             })
         }
     }
