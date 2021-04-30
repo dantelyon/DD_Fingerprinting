@@ -46,8 +46,6 @@ const static_techniques = [
 
     {name: "Aspect ratio", value: function() {const gcd = (a,b) => !b ? a : gcd(b,a%b); let divisor = gcd(window.screen.width, window.screen.height); return window.screen.width / divisor + ":" + window.screen.height / divisor}}, // gcd = greatest common divisor
 
-    {name: "Adblocker", value: function() {return document.getElementById('hICi_SWQkKVoN') ? "No" : "Yes"}},
-
     {name: "Page reloaded", value: function() {return (performance.getEntriesByType("navigation")[0].type) === "reload" ? "Yes" : "No"}},
 
     {name: "Last known visit", value: function() {let date = new Date(); const currentDate = `${date.getDate()}/${date.getMonth()+1}`; const lastVisit = window.localStorage.lastvisit; if (lastVisit) {window.localStorage.lastvisit = currentDate; return lastVisit;} else {window.localStorage.lastvisit = currentDate; return currentDate;}}},

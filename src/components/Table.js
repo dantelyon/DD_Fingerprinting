@@ -19,6 +19,7 @@ import DevToolsOpen from '../techniques/DevToolsOpen'
 import SpeechVoices from '../techniques/SpeechVoices'
 import GeoIP from '../techniques/GeoIP'
 import BatteryLevel from '../techniques/BatteryLevel'
+import AdBlocker from '../techniques/AdBlocker'
 
 function Table(props) {
   return <table className={props.showingTable ? "table" : "table hiddenTable"}>
@@ -45,6 +46,7 @@ function Table(props) {
       <SessionDuration />
       <TabChanges />
       <BatteryLevel />
+      <AdBlocker />
     </tbody>
     <tbody>
       {
