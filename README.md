@@ -10,7 +10,7 @@
 **How?** Built with React and CSS. The code was initially written in vanilla JS but was reworked to React because of all the client-side state involved.
 
 **Main difficulty?** 
-+ Compatibility. Each { browser, device, platform } has its own way of handling implementations of different features, in terms of syntax, permissions, etc.
-+ Determining the value of each data point. There's a need – in addition to evaluating if and how a technique works – to evaluate the value each technique has for the purpose of personalization.
++ Compatibility. Each { browser, device, platform } has its own way of handling implementations of different features, in terms of syntax, permissions, etc. For instance, one month a technique would work in all browsers, and then the next month it would break in Chromium browsers, while still functioning in the others.
++ Determining the value of each data point. There's a need to evaluate – in addition to if and how a technique works – what the value each technique has for the purpose of personalization.
 
 **License:** [MIT](https://choosealicense.com/licenses/mit/)
