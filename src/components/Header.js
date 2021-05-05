@@ -9,7 +9,7 @@ class Header extends React.Component {
                     <h1 className="Header-title" onClick={this.props.showTable}>Mirror Fingerprint</h1>
                     <div className="Header-buttons">
                         <span className="Header-button" onClick={this.props.showAbout}>About</span>
-                        <a className="Header-button github" href="https://github.com/" rel="noreferrer noopener" target="_blank">Github</a>
+                        <a className="Header-button github" href="https://github.com/dantelyon/MirrorFP" rel="noreferrer noopener" target="_blank">Github</a>
                     </div>
                 </div>
             </header>
