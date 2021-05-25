@@ -20,6 +20,7 @@ import SpeechVoices from '../techniques/SpeechVoices'
 import GeoIP from '../techniques/GeoIP'
 import BatteryLevel from '../techniques/BatteryLevel'
 import AdBlocker from '../techniques/AdBlocker'
+import PageLoadTime from '../techniques/PageLoadTime'
 
 function Table(props) {
   return <table className={props.showingTable ? "table" : "table hiddenTable"}>
@@ -47,6 +48,7 @@ function Table(props) {
       <SpeechVoices />
       <LoggedAccounts />
       <AdBlocker />
+      <PageLoadTime />
     </tbody>
     <tbody>
       {
