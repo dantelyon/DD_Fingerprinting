@@ -30,7 +30,12 @@ const static_techniques = [
     // PerformanceTiming is deprecated. If necessary, replace with PerformanceNavigationTiming or chrome.csi().
     // let perf = performance.getEntriesByType("navigation")[0]; perf.duration; perf.requestStart - perf.responseStart;
 
-    {name: "Screen resolution", value: function() {let pixelRatio = window.devicePixelRatio || 1; let normalized = [Math.round(window.screen.width * pixelRatio), Math.round(window.screen.height * pixelRatio)]; return normalized.join("x")}},
+    {name: "Screen resolution", value: function() {
+        let pixelRatio = window.devicePixelRatio || 1;
+        if (pixelRatio > 1.5) {pixelRatio = 1};
+        let normalized = [Math.round(window.screen.width * pixelRatio), Math.round(window.screen.height * pixelRatio)];
+        return normalized.sort().reverse().join("x")}
+    },
 
     {name: "Language", value: function() {let lang = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage || "Unavailable"; return navigator.languages.includes(lang) ? navigator.languages.join(", ") : lang}},
 
@@ -44,11 +49,17 @@ const static_techniques = [
 
     {name: "Page reloaded", value: function() {return (performance.getEntriesByType("navigation")[0].type) === "reload" ? "Yes" : "No"}},
 
-    {name: "Last known visit", value: function() {let date = new Date(); const currentDate = `${date.getDate()}/${date.getMonth()+1}`; const lastVisit = window.localStorage.lastvisit; if (lastVisit) {window.localStorage.lastvisit = currentDate; return lastVisit;} else {window.localStorage.lastvisit = currentDate; return currentDate;}}},
-
     {name: "Screen orientation", value: function() {return window.screen.orientation.type || "Unavailable"}}, //window.matchMedia("(orientation: landscape/portrait)").matches;
 
-    {name: "Touch device", value: function() {let isTouchDevice = window.matchMedia('(pointer: coarse)').matches; return isTouchDevice ? "Yes" : "No";}}
+    {name: "Touch device", value: function() {let isTouchDevice = window.matchMedia('(pointer: coarse)').matches; return isTouchDevice ? "Yes" : "No";}},
+
+    {name: "Mobile device", value: function() {
+        //var a = "undefined"==typeof window;
+        if (window) {
+            const n = window.navigator;
+            const ua = n.userAgent;
+            const isMobile = /android/i.test(ua) || /(iphone|ipod|ipad)/i.test(ua) || "iPad" === n.platform;
+            return isMobile ? "Yes" : "No";} else {return "Unavailable"}}},
 ]
 
 

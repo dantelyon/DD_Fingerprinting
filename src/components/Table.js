@@ -3,7 +3,7 @@ import '../css/Table.css';
 import STATIC from '../techniques/STATIC'
 import Clicks from '../techniques/Clicks'
 import KeyPresses from '../techniques/KeyPresses'
-import MouseMovement from '../techniques/MouseMovement'
+import PointerMovement from '../techniques/PointerMovement'
 import MouseWheel from '../techniques/MouseWheel'
 import SessionDuration from '../techniques/SessionDuration'
 import TabChanges from '../techniques/TabChanges'
@@ -33,14 +33,13 @@ function Table(props) {
       <DomRect />
       <WebGL />
       <Canvas />
-      <GeoIP />
       <AudioContext />
       <ZoomLevel />
       <Viewport />
       <DevToolsOpen />
       <Clicks />
       <KeyPresses />
-      <MouseMovement />
+      <PointerMovement />
       <MouseWheel />
       <SessionDuration />
       <TabChanges />
@@ -49,6 +48,7 @@ function Table(props) {
       <LoggedAccounts />
       <AdBlocker />
       <PageLoadTime />
+      <GeoIP />
     </tbody>
     <tbody>
       {

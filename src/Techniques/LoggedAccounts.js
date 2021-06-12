@@ -36,7 +36,7 @@ class LoggedAccounts extends React.Component {
     render() {
         return (
             <tr>
-                <td>Logged into Gmail</td>
+                <td>Logged into Gmail (not app)</td>
                 <td>{this.state.loggedIn ? "Yes" : "No"}</td>
             </tr>
         )

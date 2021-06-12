@@ -6,7 +6,7 @@ const PageLoadTime = () => {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setLoadtime(window.performance.timing.loadEventEnd - window.performance.timing.navigationStart + "ms");
-        }, 1000);
+        }, 2000);
         return () => clearTimeout(timeout);
     }, []);
     
