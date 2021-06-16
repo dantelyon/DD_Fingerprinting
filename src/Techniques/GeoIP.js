@@ -16,17 +16,15 @@ class GeoIPLookup extends React.Component {
     }
 
     async fetchGeoIP() {
-        // yeah... not ideal to expose the API key on client-side, but i'll deal with that later (or never).
-        let apiKey = 'e8c7958b07048ad6c3e1d14538021f9c2bbf205eb8cbf35e633e7a75';
-        let lookup = `https://api.ipdata.co?api-key=${apiKey}`;
-        const response = await fetch(lookup);
+        const response = await fetch("/.netlify/functions/geoip");
         if (response.ok) {
             const data = await response.json();
             this._isMounted && this.setState({
-                isp: data.asn.name,
+                query: data.ip,
                 city: data.city,
                 region: data.region,
-                query: data.ip,
+                isp: data.isp,
+                msg: data.msg,
                 success: true,
             })
         } else {throw new Error(response.status)}
