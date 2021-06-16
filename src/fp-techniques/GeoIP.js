@@ -24,7 +24,6 @@ class GeoIPLookup extends React.Component {
                 city: data.city,
                 region: data.region,
                 isp: data.isp,
-                msg: data.msg,
                 success: true,
             })
         } else {throw new Error(response.status)}

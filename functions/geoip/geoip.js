@@ -12,10 +12,9 @@ const handler = async function (event, context) {
       }),
     }
   }
-  //let clientIP = event.headers['x-nf-client-connection-ip']
+  let clientIP = event.headers['x-nf-client-connection-ip']
   let accessKey = 'e8c7958b07048ad6c3e1d14538021f9c2bbf205eb8cbf35e633e7a75'
-  //let API_ENDPOINT = `https://api.ipdata.co/${clientIP}?api-key=${accessKey}`
-  let API_ENDPOINT = `https://api.ipdata.co?api-key=${accessKey}`
+  let API_ENDPOINT = `https://api.ipdata.co/${clientIP}?api-key=${accessKey}`
   const { identity, user } = context.clientContext
   try {
     const response = await fetch(API_ENDPOINT)
@@ -27,13 +26,13 @@ const handler = async function (event, context) {
 
     return {
       statusCode: 200,
-      body: JSON.stringify({ 
-          msg: data.city,
-          identity, user, 
+      body: JSON.stringify({
+        identity, user, 
         ip: event.headers['x-nf-client-connection-ip'],
-      city: data.city,
-      region: data.region,
-      isp: data.asn.name }),
+        city: data.city,
+        region: data.region,
+        isp: data.asn.name,
+      }),
     }
   } catch (error) {
     // output to netlify function log
