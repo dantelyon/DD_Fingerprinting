@@ -29,13 +29,14 @@ const static_techniques = [
     {name: "Request response time", value: function() {return (window.performance.timing.responseEnd - window.performance.timing.requestStart) + "ms" || "Unavailable"}},
     // PerformanceTiming is deprecated. If necessary, replace with PerformanceNavigationTiming or chrome.csi().
     // let perf = performance.getEntriesByType("navigation")[0]; perf.duration; perf.requestStart - perf.responseStart;
-
+    
+    /* Too unreliable; I wasn't able to make it work consistently.
     {name: "Screen resolution", value: function() {
         let pixelRatio = window.devicePixelRatio || 1;
         if (pixelRatio > 1.5) {pixelRatio = 1};
         let normalized = [Math.round(window.screen.width * pixelRatio), Math.round(window.screen.height * pixelRatio)];
         return normalized.sort().reverse().join("x")}
-    },
+    },*/
 
     {name: "Language", value: function() {let lang = navigator.language || navigator.userLanguage || navigator.browserLanguage || navigator.systemLanguage || "Unavailable"; return navigator.languages.includes(lang) ? navigator.languages.join(", ") : lang}},
 
