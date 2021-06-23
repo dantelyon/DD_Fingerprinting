@@ -22,7 +22,7 @@ class PointerMovements extends React.Component {
         return (
           <tr>
             <td>Pointer movement</td>
-            <td>{this.state.pointerMovement.clientX || 0}x{this.state.pointerMovement.clientY || 0}</td>
+            <td>{Math.trunc(this.state.pointerMovement.clientX || 0)}x{Math.trunc(this.state.pointerMovement.clientY || 0)}</td>
           </tr> 
         )
       }
