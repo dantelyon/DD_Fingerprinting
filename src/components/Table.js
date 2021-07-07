@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/Table.css';
-import STATIC from '../fp-techniques/STATIC'
+import StaticData from './staticData'
 import Clicks from '../fp-techniques/Clicks'
 import KeyPresses from '../fp-techniques/KeyPresses'
 import PointerMovement from '../fp-techniques/PointerMovement'
@@ -51,21 +51,9 @@ function Table(props) {
       <GeoIP />
     </tbody>
     <tbody>
-      {
-        STATIC.map(technique => {
-          const result = technique.value();
-          const unavailableFeature = result === "Unavailable" || result === null || result === "undefined" || result === false;
-          const tableRow = <tr key={technique.name}>
-              <td>{technique.name}</td>
-              {unavailableFeature ? <td className="unavailableFeature">This feature is unavailable for your browser or device.</td> : <td>{result}</td>}
-            </tr>
-          return tableRow
-        })
-      }
+      <StaticData />
     </tbody>
   </table>
 }
 
 export default Table
-
-	
