@@ -26,7 +26,7 @@ const static_techniques = [
 
     {name: "Color depth", value: function() {return window.screen.colorDepth || "Unavailable"}},
 
-    {name: "Request response time", value: function() {return (window.performance.timing.responseEnd - window.performance.timing.requestStart) + "ms" || "Unavailable"}},
+    {name: "Request response time", value: function() {const responseTime = (window.performance.timing.responseEnd - window.performance.timing.requestStart); return responseTime ? responseTime + "ms" : "Unavailable"}},
     // PerformanceTiming is deprecated. If necessary, replace with PerformanceNavigationTiming or chrome.csi().
     // let perf = performance.getEntriesByType("navigation")[0]; perf.duration; perf.requestStart - perf.responseStart;
     
